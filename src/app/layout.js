@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer";
 
 const interFont = Inter({
   variable: "--inter",
@@ -19,11 +20,12 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${interFont.variable} h-full antialiased`}
     >
-      <body className={`min-h-full flex flex-col ${interFont.className}`}>
+      <body className={`min-h-full flex flex-col bg-[#f3f3f3] ${interFont.className}`}>
         <Navbar />
-        <main>
+        <main className="bg-[#f3f3f3]">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );
