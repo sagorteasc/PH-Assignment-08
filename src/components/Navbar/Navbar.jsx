@@ -76,7 +76,7 @@ const Navbar = () => {
                     </ul>
                     <div>
                         <div className="hidden items-center gap-4 md:flex">
-                            <Button>Login</Button>
+                            <Button className={"rounded-2xl"}>Login</Button>
                         </div>
 
                         <Link href={"/"}>
