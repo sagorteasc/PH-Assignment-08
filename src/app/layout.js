@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
     >
       <body className={`min-h-full flex flex-col bg-[#f3f3f3] ${interFont.className}`}>
         <Navbar />
-        <main className="bg-[#f3f3f3]">
+        <main className="bg-[#f3f3f3] mt-16">
           {children}
         </main>
         <Footer />

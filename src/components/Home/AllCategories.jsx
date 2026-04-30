@@ -1,10 +1,6 @@
-import { books } from "@/db/booksData";
 import { Card, Chip } from "@heroui/react";
 
 const AllCategories = () => {
-
-    const booksData = books;
-
     return (
         <div className="max-w-400 mx-auto w-4/5 my-16">
             <div className="flex mb-5 flex-col space-y-2 justify-center">
