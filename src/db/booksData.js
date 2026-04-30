@@ -37,12 +37,12 @@ export const books = [
     },
     {
         "id": 5,
-        "title": "You Don't Know JS",
-        "author": "Kyle Simpson",
-        "description": "A deep dive into the core mechanisms of the JavaScript language.",
+        "title": "Eloquent JavaScript",
+        "author": "Marijn Haverbeke",
+        "description": "A modern introduction to JavaScript programming covering fundamentals, advanced concepts, and practical examples.",
         "category": "Tech",
         "available_quantity": 12,
-        "image_url": "https://covers.openlibrary.org/b/isbn/9781491904244-L.jpg"
+        "image_url": "https://covers.openlibrary.org/b/isbn/9781593279509-L.jpg"
     },
     {
         "id": 6,
@@ -73,12 +73,12 @@ export const books = [
     },
     {
         "id": 9,
-        "title": "The Origin of Species",
-        "author": "Charles Darwin",
-        "description": "A foundational work of evolutionary biology introducing natural selection.",
+        "title": "The Elegant Universe",
+        "author": "Brian Greene",
+        "description": "A fascinating exploration of string theory and the quest to understand the fundamental nature of the universe.",
         "category": "Science",
         "available_quantity": 4,
-        "image_url": "https://covers.openlibrary.org/b/isbn/9781509827699-L.jpg"
+        "image_url": "https://covers.openlibrary.org/b/isbn/9780393338102-L.jpg"
     },
     {
         "id": 10,
@@ -91,7 +91,7 @@ export const books = [
     },
     {
         "id": 11,
-        "title": "Artificial Intelligence: A Modern Approach",
+        "title": "Artificial Intelligence",
         "author": "Stuart Russell & Peter Norvig",
         "description": "A comprehensive textbook covering the theory and practice of AI.",
         "category": "Tech",
@@ -100,7 +100,7 @@ export const books = [
     },
     {
         "id": 12,
-        "title": "The Gene: An Intimate History",
+        "title": "The Gene",
         "author": "Siddhartha Mukherjee",
         "description": "A detailed history of genetics and its impact on humanity.",
         "category": "Science",
