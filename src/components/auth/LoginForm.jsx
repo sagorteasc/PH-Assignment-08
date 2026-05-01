@@ -38,8 +38,8 @@ const LoginForm = () => {
     const handleContinueWithGoogle = async () => {
         const data = await authClient.signIn.social({
             provider: "google",
+            callbackURL: "/"
         });
-        router.push("/");
     }
 
     return (
@@ -97,7 +97,6 @@ const LoginForm = () => {
 
                         <Button
                             onClick={handleContinueWithGoogle}
-                            type="submit"
                             variant="outline"
                             className={"w-full text-[#4079ee] border border-[#4079ee] hover:text-white hover:bg-accent"}
                         >
