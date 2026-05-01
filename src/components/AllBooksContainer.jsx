@@ -47,7 +47,7 @@ const AllBooksContainer = () => {
                         <SearchField.SearchIcon />
                         <SearchField.Input
                             className="w-70"
-                            placeholder="Search book by title"
+                            placeholder="Search books by title"
                             value={searchValue}
                             onChange={(e) => setSearchValue(e.target.value)}
                         />
@@ -63,7 +63,7 @@ const AllBooksContainer = () => {
             <div className="flex justify-between items-center">
                 <div className="mb-5">
                     <button
-                        className=""
+                        className="cursor-pointer"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         aria-label="Toggle menu"
                         aria-expanded={isMenuOpen}
@@ -97,7 +97,8 @@ const AllBooksContainer = () => {
 
                         <div className="fixed inset-0 bg-black/30 z-20" onClick={() => setIsMenuOpen(false)}>
 
-                            <div className={`fixed top-15 left-0 h-full bg-white shadow-lg p-6 z-10 w-64 transform transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
+                            <div className={`fixed top-15 left-0 h-full bg-white shadow-lg p-6 z-10 w-64 transform transition-transform duration-300
+                                ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
                                 <h3 className="text-center font-medium text-2xl text-gray-600 mb-3">Categories</h3>
                                 <ul className="flex flex-col gap-3">
                                     <Button
