@@ -21,15 +21,17 @@ const RegisterForm = () => {
         const { data, error } = await authClient.signUp.email({
             name: userData.name,
             email: userData.email,
-            photo: userData.photo,
             password: userData.password,
         });
 
         if (error) {
-            toast.error("Something Went Wrong");
+            toast.error(error.message);
         }
 
         if (data) {
+            await authClient.updateUser({
+                image: userData.photo,
+            });
             toast.success("Registration Successful");
             router.push("/login");
         }
@@ -83,9 +85,7 @@ const RegisterForm = () => {
                         name="photo"
                     >
                         <Label>Photo URL</Label>
-                        <InputGroup>
-                            <InputGroup.Input placeholder="Enter your photo url" className="w-full max-w-70" />
-                        </InputGroup>
+                        <Input placeholder="Enter your photo URL" />
                     </TextField>
                     <TextField
                         isRequired
@@ -140,6 +140,7 @@ const RegisterForm = () => {
 
                         <Button
                             onClick={handleContinueWithGoogle}
+                            type="button"
                             variant="outline"
                             className={"w-full text-[#4079ee] border border-[#4079ee] hover:text-white hover:bg-accent"}
                         >

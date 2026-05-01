@@ -10,7 +10,6 @@ import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
 
-    const router = useRouter();
     const [isVisible, setIsVisible] = useState(false);
 
     const onSubmit = async (e) => {
@@ -24,10 +23,8 @@ const LoginForm = () => {
             callbackURL: "/",
         });
 
-        console.log({ data, error });
-
         if (error) {
-            toast.error("Something Went Wrong");
+            toast.error("Wrong Information");
         }
 
         if (data) {
@@ -97,6 +94,7 @@ const LoginForm = () => {
 
                         <Button
                             onClick={handleContinueWithGoogle}
+                            type="button"
                             variant="outline"
                             className={"w-full text-[#4079ee] border border-[#4079ee] hover:text-white hover:bg-accent"}
                         >
