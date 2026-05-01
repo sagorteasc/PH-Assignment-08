@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Home/Navbar/Navbar";
 import Footer from "@/components/Home/Footer";
+import { ToastContainer } from "react-toastify";
 
 const interFont = Inter({
   variable: "--inter",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
       <body className={`min-h-full flex flex-col bg-[#f3f3f3] ${interFont.className}`}>
         <Navbar />
         <main className="bg-[#f3f3f3] mt-16">
+          <ToastContainer />
           {children}
         </main>
         <Footer />

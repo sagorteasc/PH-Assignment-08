@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import NavLogo from "@/assets/Logo.png"
 import NavLink from "./NavLink";
+import { signOut, useSession } from "@/lib/auth-client";
 
 const Navbar = () => {
 
@@ -22,6 +23,9 @@ const Navbar = () => {
             <NavLink href="/profile" className="font-medium">My Profile</NavLink>
         </li>
     </>
+
+    const { data } = useSession();
+    const user = data?.user;
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -76,7 +80,14 @@ const Navbar = () => {
                     </ul>
                     <div>
                         <div className="hidden items-center gap-4 md:flex">
-                            <Button className={"rounded-2xl"}>Login</Button>
+                            {
+                                user ?
+                                    <div className="flex items-center gap-3">
+                                        {user.name.toUpperCase()}
+                                        <Button onClick={() => signOut()} className={"w-full"}>Log Out</Button>
+                                    </div>
+                                    : <Link href={"/login"}><Button className={"w-full"}>Login</Button></Link>
+                            }
                         </div>
 
                         <Link href={"/"}>
@@ -96,7 +107,19 @@ const Navbar = () => {
                         <ul className="flex flex-col gap-2 p-4">
                             {navList}
                             <li className="mt-4 flex flex-col gap-2 border-t border-separator pt-4">
-                                <Button className="w-full">Login</Button>
+                                {
+                                    user ?
+                                        <div className="flex items-center gap-3 w-full">
+                                            {user.name.toUpperCase()}
+                                            <Button
+                                                onClick={() => signOut()}
+                                                className={"w-full inline"}
+                                            >
+                                                Log Out
+                                            </Button>
+                                        </div>
+                                        : <Link href={"/login"}><Button className={"w-full"}>Login</Button></Link>
+                                }
                             </li>
                         </ul>
                     </div>
