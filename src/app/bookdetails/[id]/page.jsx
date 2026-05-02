@@ -1,5 +1,6 @@
+import BorrowButton from "@/components/BorrowButton";
 import { books } from "@/db/booksData";
-import { Button, Card } from "@heroui/react";
+import { Card } from "@heroui/react";
 import Image from "next/image";
 
 const BookDetails = async ({ params }) => {
@@ -36,11 +37,7 @@ const BookDetails = async ({ params }) => {
                                 <Card.Description className="text-gray-500 text-lg leading-7">{description}</Card.Description>
                             </div>
                             <Card.Description className="text-gray-700 text-lg">Copies Available: <span className="text-[#2fa54a] font-bold">{available_quantity}</span></Card.Description>
-                            <Button
-                                variant="outline"
-                                className={"text-[#2fa54a] bg-[#d7fce7] border border-[#2fa54a] hover:bg-[#2fa54a] hover:text-white hover:shadow-md transition-colors duration-200"}>
-                                Borrow This Book
-                            </Button>
+                            <BorrowButton />
                         </Card.Header>
                     </div>
                 </Card>
