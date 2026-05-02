@@ -5,7 +5,7 @@ const WhyReadHub = () => {
         <div className="max-w-400 mx-auto w-4/5 my-16">
             <div className="flex mb-5 flex-col space-y-2 justify-center">
                 <Chip className="text-[#6563ee] bg-[#dbeafe] font-medium mx-auto">❓ Why ReadHub</Chip>
-                <h1 className="text-center font-bold text-4xl text-gray-800">Built for Every Reader</h1>
+                <h1 className="text-center font-bold text-4xl animate__animated animate__flipInX animate__slow animate__infinite text-gray-800">Built for Every Reader</h1>
             </div>
 
             <div className="grid gap-4 md:grid-cols-3">

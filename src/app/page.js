@@ -1,7 +1,7 @@
 import AllCategories from "@/components/Home/AllCategories";
 import Banner from "@/components/Home/Banner";
 import FeaturedBooks from "@/components/Home/FeaturedBooks";
-import WhyReadHub from "@/components/WhyReadHub";
+import WhyReadHub from "@/components/Home/WhyReadHub";
 
 const Home = () => {
   return (

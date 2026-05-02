@@ -5,7 +5,7 @@ const AllCategories = () => {
         <div className="max-w-400 mx-auto w-4/5 my-16">
             <div className="flex mb-5 flex-col space-y-2 justify-center">
                 <Chip className="text-[#6563ee] bg-[#dbeafe] font-medium mx-auto">🏷️ Categories</Chip>
-                <h1 className="text-center font-bold text-4xl text-gray-800">Browse by Genre</h1>
+                <h1 className="text-center font-bold text-4xl text-gray-800 animate__animated animate__bounceIn animate__slow animate__infinite">Browse by Genre</h1>
             </div>
 
             <div className="grid gap-4 md:grid-cols-3">
