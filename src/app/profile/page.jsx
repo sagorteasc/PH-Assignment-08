@@ -9,7 +9,16 @@ const MyProfile = () => {
 
     const { data } = useSession();
     const user = data?.user;
-    console.log(user);
+
+    const handleLogOut = async () => {
+        await authClient.signOut({
+            fetchOptions: {
+                onSuccess: () => {
+                    router.push("/login");
+                },
+            },
+        });
+    }
 
     return (
         <div className='max-w-200 w-4/5 md:w-2/5 lg:w-1/4 mx-auto my-16'>
@@ -55,7 +64,7 @@ const MyProfile = () => {
 
                     <Card.Footer className="mt-6 gap-2 justify-end">
                         <Link href={"/profile/updateprofile"}><Button>Update Info</Button></Link>
-                        <Button onClick={() => signOut()}>Log Out</Button>
+                        <Button onClick={handleLogOut}>Log Out</Button>
                     </Card.Footer>
                 </div>
             </Card>

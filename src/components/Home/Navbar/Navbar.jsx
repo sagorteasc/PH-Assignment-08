@@ -29,6 +29,16 @@ const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const handleLogOut = async () => {
+        await authClient.signOut({
+            fetchOptions: {
+                onSuccess: () => {
+                    router.push("/login");
+                },
+            },
+        });
+    }
+
     return (
         <div>
             <nav className="containter mx-auto fixed top-0 z-40 w-full border-b border-separator bg-background/70 backdrop-blur-lg">
@@ -84,7 +94,7 @@ const Navbar = () => {
                                 user ?
                                     <div className="flex items-center gap-3">
                                         {user.name.toUpperCase()}
-                                        <Button onClick={() => signOut()} className={"w-full"}>Log Out</Button>
+                                        <Button onClick={handleLogOut} className={"w-full"}>Log Out</Button>
                                     </div>
                                     : <Link href={"/login"}><Button className={"w-full"}>Login</Button></Link>
                             }
@@ -112,7 +122,7 @@ const Navbar = () => {
                                         <div className="flex items-center gap-3 w-full">
                                             {user.name.toUpperCase()}
                                             <Button
-                                                onClick={() => signOut()}
+                                                onClick={handleLogOut}
                                                 className={"w-full inline"}
                                             >
                                                 Log Out
