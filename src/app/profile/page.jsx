@@ -1,5 +1,5 @@
 "use client";
-import { signOut, useSession } from '@/lib/auth-client';
+import { authClient, useSession } from '@/lib/auth-client';
 import { Button, Card, Separator } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';

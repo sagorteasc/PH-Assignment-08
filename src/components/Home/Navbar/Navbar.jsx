@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import NavLogo from "@/assets/Logo.png"
 import NavLink from "./NavLink";
-import { signOut, useSession } from "@/lib/auth-client";
+import { authClient, useSession } from "@/lib/auth-client";
 
 const Navbar = () => {
 
