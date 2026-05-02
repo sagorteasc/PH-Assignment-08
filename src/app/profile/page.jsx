@@ -3,7 +3,7 @@ import { authClient, useSession } from '@/lib/auth-client';
 import { Button, Card, Separator } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
 
 const MyProfile = () => {
@@ -12,10 +12,14 @@ const MyProfile = () => {
     const user = data?.user;
 
     const router = useRouter();
+    const pathname = usePathname();
 
     const handleLogOut = async () => {
         await signOut();
-        router.push("/login");
+
+        if (pathname === "/profile" || pathname === "/profile/updateprofile" || pathname.startsWith("/bookdetails/")) {
+            router.push("/login");
+        }
     }
 
     return (

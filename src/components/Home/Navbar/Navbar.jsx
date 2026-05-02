@@ -7,7 +7,7 @@ import { useState } from "react";
 import NavLogo from "@/assets/Logo.png"
 import NavLink from "./NavLink";
 import { signOut, useSession } from "@/lib/auth-client";
-import { redirect, useRouter } from "next/navigation";
+import { redirect, usePathname, useRouter } from "next/navigation";
 
 const Navbar = () => {
 
@@ -31,11 +31,16 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const router = useRouter();
+    const pathname = usePathname();
 
     const handleLogOut = async () => {
         await signOut();
-        router.push("/login");
+
+        if (pathname === "/profile" || pathname === "/profile/updateprofile" || pathname.startsWith("/bookdetails/")) {
+            router.push("/login");
+        }
     }
+
 
     return (
         <div>
