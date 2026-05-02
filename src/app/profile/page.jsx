@@ -3,6 +3,7 @@ import { authClient, useSession } from '@/lib/auth-client';
 import { Button, Card, Separator } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const MyProfile = () => {
@@ -10,14 +11,11 @@ const MyProfile = () => {
     const { data } = useSession();
     const user = data?.user;
 
+    const router = useRouter();
+
     const handleLogOut = async () => {
-        await authClient.signOut({
-            fetchOptions: {
-                onSuccess: () => {
-                    router.push("/login");
-                },
-            },
-        });
+        await signOut();
+        router.push("/login");
     }
 
     return (

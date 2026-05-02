@@ -6,7 +6,8 @@ import Link from "next/link";
 import { useState } from "react";
 import NavLogo from "@/assets/Logo.png"
 import NavLink from "./NavLink";
-import { authClient, useSession } from "@/lib/auth-client";
+import { signOut, useSession } from "@/lib/auth-client";
+import { redirect, useRouter } from "next/navigation";
 
 const Navbar = () => {
 
@@ -29,14 +30,11 @@ const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const router = useRouter();
+
     const handleLogOut = async () => {
-        await authClient.signOut({
-            fetchOptions: {
-                onSuccess: () => {
-                    router.push("/login");
-                },
-            },
-        });
+        await signOut();
+        router.push("/login");
     }
 
     return (
