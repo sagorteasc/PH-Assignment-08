@@ -33,7 +33,7 @@ const BookCard = ({ searchItem, isSearched, categoryBooks, isCategorySearch }) =
                                         <Card.Description className="text-gray-700">Category: {book.category}</Card.Description>
                                     </Card.Header>
                                     <Card.Footer className="flex gap-2 justify-end">
-                                        <Link href={`/${book.id}`}><Button>View Details</Button></Link>
+                                        <Link href={`/bookdetails/${book.id}`}><Button>View Details</Button></Link>
                                     </Card.Footer>
                                 </div>
                             </Card>
@@ -65,7 +65,7 @@ const BookCard = ({ searchItem, isSearched, categoryBooks, isCategorySearch }) =
                                                 <Card.Description className="text-gray-700">Category: {book.category}</Card.Description>
                                             </Card.Header>
                                             <Card.Footer className="gap-2 justify-end">
-                                                <Link href={`/${book.id}`}><Button>Details</Button></Link>
+                                                <Link href={`/bookdetails/${book.id}`}><Button>Details</Button></Link>
                                             </Card.Footer>
                                         </div>
                                     </Card>
@@ -92,7 +92,7 @@ const BookCard = ({ searchItem, isSearched, categoryBooks, isCategorySearch }) =
                                                 <Card.Description className="text-gray-700">Category: {book.category}</Card.Description>
                                             </Card.Header>
                                             <Card.Footer className="gap-2 justify-end">
-                                                <Link href={`/${book.id}`}><Button>Details</Button></Link>
+                                                <Link href={`/bookdetails/${book.id}`}><Button>Details</Button></Link>
                                             </Card.Footer>
                                         </div>
                                     </Card>
@@ -117,7 +117,7 @@ const BookCard = ({ searchItem, isSearched, categoryBooks, isCategorySearch }) =
                                                 <Card.Description className="text-gray-700">Category: {book.category}</Card.Description>
                                             </Card.Header>
                                             <Card.Footer className="gap-2 justify-end">
-                                                <Link href={`/${book.id}`}><Button>Details</Button></Link>
+                                                <Link href={`/bookdetails/${book.id}`}><Button>Details</Button></Link>
                                             </Card.Footer>
                                         </div>
                                     </Card>
