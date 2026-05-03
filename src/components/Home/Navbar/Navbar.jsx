@@ -78,7 +78,7 @@ const Navbar = () => {
                             </svg>
                         </button>
                         <Link href={"/"}>
-                            <div className="items-center gap-3 hidden animate__animated animate__fadeInDown animate__slow animate__infinite md:flex">
+                            <div className="items-center gap-3 hidden md:flex">
                                 <Image
                                     src={NavLogo}
                                     alt="Navbar Logo"
@@ -104,7 +104,7 @@ const Navbar = () => {
                         </div>
 
                         <Link href={"/"}>
-                            <div className="items-center gap-3 flex animate__animated animate__fadeInDown animate__slow animate__infinite md:hidden">
+                            <div className="items-center gap-3 flex md:hidden">
                                 <Image
                                     src={NavLogo}
                                     alt="Navbar Logo"
